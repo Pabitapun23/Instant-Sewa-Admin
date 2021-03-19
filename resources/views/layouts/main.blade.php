@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +29,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-         Instant Sewa
+          Creative Tim
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -62,7 +63,7 @@
               <p>Transaction Management</p>
             </a>
           </li>
-        
+          
         </ul>
       </div>
     </div>
@@ -71,7 +72,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;"></a>
+            <a class="navbar-brand" href="javascript:;">Table List</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -136,7 +137,7 @@
       <!-- End Navbar -->
 
       <div class="content">
-        @yield('content')
+      @yield('content')
       </div>
 
       <footer class="footer">
@@ -446,6 +447,13 @@
 
         });
       });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+
     });
   </script>
 </body>
