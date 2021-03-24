@@ -26,9 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['middleware' => ['auth','admin']], function () {
 
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('/dashboard', 'App\Http\Controllers\Admin\UserManagementController@userData');
 
     Route::get('/role-register', 'App\Http\Controllers\Admin\DashboardController@registered');
 

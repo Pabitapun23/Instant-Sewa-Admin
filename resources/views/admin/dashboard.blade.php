@@ -40,75 +40,31 @@
                 </th>
               </thead>
               <tbody>
+                <?php foreach ($serviceprovider as $key){?>
                 <tr>
                   <td>
-                    1
+                    <?php echo $key->id ?>
                   </td>
                   <td>
-                    Ram
-                    </td>
-                  <td>
-                    9898986786
+                    <?php echo $key->username ?>
                   </td>
                   <td>
-                    ram@gmail.com
+                    <?php echo $key->phoneno; ?>
                   </td>
                   <td>
-                    Lamachaur
+                    <?php echo $key->email; ?>
                   </td>
                   <td>
-                    4
+                    <?php echo $key->address_address ?>
                   </td>
                   <td>
-                    Electricity
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    2
+                    <?php echo $key->rating ?>
                   </td>
                   <td>
-                    Shyam
-                  </td>
-                  <td>
-                    9898675778
-                  </td>
-                  <td>
-                    shyam@gmail.com
-                  </td>
-                  <td>
-                    Chauthe
-                  </td>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Plumbing
+                    <?php echo $key->occupation ?>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Hari
-                  </td>
-                  <td>
-                    9009862354
-                  </td>
-                  <td>
-                    hari@gmail.com
-                  </td>
-                  <td>
-                    Bagar
-                  </td>
-                  <td>
-                    5
-                  </td>
-                  <td>
-                    Painting
-                  </td>
-                </tr>
+              <?php }?>
               </tbody>
             </table>
           </div>
@@ -145,66 +101,29 @@
                 </th>
               </thead>
               <tbody>
+                <?php foreach ($serviceuser as $key){?>
                 <tr>
                   <td>
-                    1
+                    <?php echo $key->id ?>
                   </td>
                   <td>
-                    Sita
+                    <?php echo $key->username ?>
                   </td>
                   <td>
-                    9897867578
+                    <?php echo $key->phoneno; ?>
                   </td>
                   <td>
-                    sita@gmail.com
+                    <?php echo $key->email; ?>
                   </td>
                   <td>
-                    Deep
+                    <?php echo $key->address_address ?>
                   </td>
                   <td>
                     Fan repair
                   </td>
-                </tr>
-                <tr>
-                  <td>
-                    2
-                  </td>
-                  <td>
-                    Suman
-                  </td>
-                  <td>
-                    9875674877
-                  </td>
-                  <td>
-                    suman@gmail.com
-                  </td>
-                  <td>
-                    Amarsingh Chowk
-                  </td>
-                  <td>
-                    Water Leakage repair
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Gita
-                  </td>
-                  <td>
-                    9875875983
-                  </td>
-                  <td>
-                    gita@gmail.com
-                  </td>
-                  <td>
-                    Prithvi Chowk
-                  </td>
-                  <td>
-                    Wall Paint
-                  </td>
-                </tr>            
+                </tr>  
+               <?php }?>
+
               </tbody>
             </table>
           </div>
