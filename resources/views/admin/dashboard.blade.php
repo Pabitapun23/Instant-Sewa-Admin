@@ -69,6 +69,15 @@
             </table>
           </div>
         </div>
+        <span>
+         {{ $serviceprovider-> links()}}
+        </span>
+        <style>
+            .w-5{
+              display: none;
+            }
+        </style>
+        <br>
       </div>
     </div>
     <div class="col-md-12">
@@ -135,5 +144,9 @@
 @endsection
 
 @section('scripts')
-
+    <!-- <script>
+        $(document).ready( function () {
+          $('#dataTable').DataTable();
+        } );
+    </script> -->
 @endsection

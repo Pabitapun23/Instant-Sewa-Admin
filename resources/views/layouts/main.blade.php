@@ -32,38 +32,32 @@
           Instant Sewa
         </a></div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active">
+      <ul class="nav">
+          <li class="{{ 'main-dashboard' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./main-dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ 'dashboard' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./dashboard">
               <i class="material-icons">person</i>
               <p>User Manage</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./dashboard">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="nav-item">
+          <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./role-register">
               <i class="material-icons">bubble_chart</i>
               <p>Service Management</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ '' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./role-register">
               <i class="material-icons">language</i>
               <p>Transaction Management</p>
             </a>
           </li>
-          
+        
         </ul>
       </div>
     </div>

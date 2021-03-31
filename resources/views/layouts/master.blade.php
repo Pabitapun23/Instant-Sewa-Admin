@@ -17,46 +17,37 @@
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ asset('assets/css/dataTables.min.css') }}" >
 </head>
 
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
       <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
          Instant Sewa
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="{{ 'main-dashboard' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./main-dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ 'dashboard' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./dashboard">
               <i class="material-icons">person</i>
               <p>User Manage</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./dashboard">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="nav-item">
+          <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./role-register">
               <i class="material-icons">bubble_chart</i>
               <p>Service Management</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="{{ '' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./role-register">
               <i class="material-icons">language</i>
               <p>Transaction Management</p>
@@ -238,6 +229,9 @@
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+   
+  <script src="{{ asset('assets/js/dataTables.min.js') }}"></script>
+
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Plugin for the momentJs  -->
   <script src="../assets/js/plugins/moment.min.js"></script>

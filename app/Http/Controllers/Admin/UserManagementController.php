@@ -10,7 +10,7 @@ class UserManagementController extends Controller
 {
      public function userData()
     {
-    	$serviceproviders  = DB::table('users')->where('user_type', 'ServiceProvider')->get();
+    	$serviceproviders  = DB::table('users')->where('user_type', 'ServiceProvider')->paginate(5);
     	$serviceuser  = DB::table('users')->where('user_type', 'serviceuser')->get();
     	$serviceproviders->map(function ($serviceprovider) {
     $serviceprovider->occupation =UserManagementController::categoryName($serviceprovider->id);

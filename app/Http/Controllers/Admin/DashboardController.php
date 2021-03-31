@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function registered()
     {
         $users = User::all();
-    	$serviceprovider_count  = DB::table('users')->where('user_type', 'ServiceProvider')->count();
+    	//$serviceprovider_count  = DB::table('users')->where('user_type', 'ServiceProvider')->count();
         return view('admin.register')->with('users', $users);
     }
 }
