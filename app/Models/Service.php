@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+    protected $table = 'services';
+    protected $fillable = ['name', 'description', 'quantity', 'image', 'sub_categories_id', 'payment'];
+
     public function serviceprovider()
     {
         return $this->belongsTo(ServiceProvider::class);

@@ -16,22 +16,34 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="/save-service" method="POST">
+        <form action="/save-services" method="POST">
             {{ csrf_field() }}
 
             <div class="modal-body">
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Category:</label>
-                  <input type="text" name="category" class="form-control" id="recipient-name">
+                    <label for="recipient-name" class="col-form-label">Subcategory:</label><br>
+                    <input type="text" name="name" class="form-control" id="recipient-name">
+                  </div>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Description:</label><br>
+                    <textarea name="description" class="form-control" id="message-text"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Subcategory:</label>
-                    <input type="text" name="subcategory" class="form-control" id="recipient-name">
-                  </div>
+                    <label for="recipient-name" class="col-form-label">Quantity:</label><br>
+                    <input type="text" name="quantity" class="form-control" id="recipient-name">
+                </div>
                 <div class="form-group">
-                    <label for="message-text" class="col-form-label">Description:</label>
-                    <textarea name="description" class="form-control" id="message-text"></textarea>
-                  </div>
+                    <label for="recipient-name" class="col-form-label">Image:</label><br>
+                    <input type="text" name="image" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Sub_Category_ID:</label><br>
+                    <input type="text" name="sub_categories_id" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Payment:</label><br>
+                    <input type="text" name="payment" class="form-control" id="recipient-name">
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -53,6 +65,11 @@
           </h4>
         </div>
         <div class="card-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
@@ -60,13 +77,13 @@
                   ID
                 </th>
                 <th>
-                  Category
-                </th>
-                <th>
                   Subcategory
                 </th>
                 <th>
                   Description
+                </th>
+                <th>
+                  Quantity
                 </th>
                 <th>
                   Image
@@ -88,7 +105,7 @@
                     Plumbing
                   </td>
                   <td>
-                    Plumbing
+                    1
                   </td>
                   <td>
                     Plumbing
@@ -111,7 +128,7 @@
                     Plumbing
                   </td>
                   <td>
-                    Plumbing
+                    2
                   </td>
                   <td>
                     Plumbing
@@ -134,7 +151,7 @@
                     Plumbing
                   </td>
                   <td>
-                    Plumbing
+                    1
                   </td>
                   <td>
                     Plumbing
@@ -157,7 +174,7 @@
                     Plumbing
                   </td>
                   <td>
-                    Plumbing
+                    3
                   </td>
                   <td>
                     Plumbing

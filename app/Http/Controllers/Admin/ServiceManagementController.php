@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Service;
+//use Illuminate\Support\Facades\DB;
 
 class ServiceManagementController extends Controller
 {
@@ -18,9 +19,17 @@ class ServiceManagementController extends Controller
 
     public function store(Request $request)
     {
-        $service = DB::model('sub_categories');
-        $category = $request->input('category');
-        $category = $request->input('subcategory');
-        $category = $request->input('description');
+        $services = new Service;
+
+        $services->name = $request->input('name');
+        $services->description = $request->input('description');
+        $services->quantity = $request->input('quantity');
+        $services->image = $request->input('image');
+        $services->sub_categories_id = $request->input('sub_categories_id');
+        $services->payment = $request->input('payment');
+
+        $services->save();
+
+        return redirect('/service-management')->with('status', 'Data Added for Service Management');
     }
 }

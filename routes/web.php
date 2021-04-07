@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Admin\DashboardController;
-//use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\ServiceManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +28,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\Admin\UserManagementController@userData');
 
     Route::get('/service-management', 'App\Http\Controllers\Admin\ServiceManagementController@registered');
-    Route::post('/save-service', 'Admin\ServiceManagementController@store');
+    Route::post('/save-services', 'App\Http\Controllers\Admin\ServiceManagementController@store');
 
     Route::get('/main-dashboard', 'App\Http\Controllers\Admin\MainDashboardController@mainDashboard');
 
