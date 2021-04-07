@@ -45,19 +45,19 @@
               <p>User Manage</p>
             </a>
           </li>
-          <li class="{{ 'role-register' == request()->path() ? 'active' : '' }}">
-            <a class="nav-link" href="./role-register">
+          <li class="{{ 'service-management' == request()->path() ? 'active' : '' }}">
+            <a class="nav-link" href="./service-management">
               <i class="material-icons">bubble_chart</i>
               <p>Service Management</p>
             </a>
           </li>
           <li class="{{ '' == request()->path() ? 'active' : '' }}">
-            <a class="nav-link" href="./role-register">
+            <a class="nav-link" href="./service-management">
               <i class="material-icons">language</i>
               <p>Transaction Management</p>
             </a>
           </li>
-        
+
         </ul>
       </div>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard | Instant Sewa
+    User Manage | Instant Sewa
 @endsection
 
 @section('content')
@@ -130,7 +130,7 @@
                   <td>
                     Fan repair
                   </td>
-                </tr>  
+                </tr>
                <?php }?>
 
               </tbody>
