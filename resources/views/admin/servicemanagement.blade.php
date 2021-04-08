@@ -73,119 +73,55 @@
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
-                <th>
+                <th class="w-10p">
                   ID
                 </th>
-                <th>
+                <th class="w-10p">
                   Subcategory
                 </th>
-                <th>
+                <th class="w-10p">
                   Description
                 </th>
-                <th>
+                <th class="w-10p">
                   Quantity
                 </th>
-                <th>
+                <th class="w-10p">
                   Image
                 </th>
-                <th>
+                <th class="w-10p">
                 </th>
-                <th>
+                <th class="w-10p">
                 </th>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    1
-                  </td>
-                  <td>
-                    Electricity
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    1
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-success">EDIT</a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-danger">DELETE</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    2
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    2
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-success">EDIT</a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-danger">DELETE</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Painting
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    1
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-success">EDIT</a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-danger">DELETE</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    4
-                  </td>
-                  <td>
-                    Cleaning
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    3
-                  </td>
-                  <td>
-                    Plumbing
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-success">EDIT</a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-danger">DELETE</a>
-                  </td>
-                </tr>
+                <?php foreach ($servicemgmnt as $key){?>
+                    <tr>
+                      <td>
+                        <?php echo $key->id ?>
+                      </td>
+                      <td>
+                        <?php echo $key->name ?>
+                      </td>
+                      <td>
+                        <?php echo $key->description; ?>
+                      </td>
+                      <td>
+                        <?php echo $key->email; ?>
+                      </td>
+                      <td>
+                        <?php echo $key->quantity ?>
+                      </td>
+                      <td>
+                        <?php echo $key->image ?>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-success">EDIT</a>
+                      </td>
+                      <td>
+                        <a href="#" class="btn btn-danger">DELETE</a>
+                      </td>
+                    </tr>
+                <?php }?>
               </tbody>
             </table>
           </div>

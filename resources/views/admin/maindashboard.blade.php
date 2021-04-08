@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    RegisteMain Dashboard | Instant Sewa
+    Main Dashboard | Instant Sewa
 @endsection
 
 
@@ -17,7 +17,7 @@
                   <p class="card-category">Category</p>
                   <h3 class="card-title">
                     <?php echo $category_count; ?>
-                      
+
                     <!-- <small>GB</small> -->
                   </h3>
                 </div>
