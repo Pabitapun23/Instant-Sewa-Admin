@@ -56,4 +56,13 @@ class ServiceManagementController extends Controller
         return redirect('/service-management')->with('status', 'Data Updated for Service Management Page');
     }
 
+    public function delete($id)
+    {
+        $services = Service::findOrFail($id);
+        $services->delete();
+
+        return redirect('/service-management')->with('status', 'Data Dele for Service Management Page');
+
+    }
+
 }

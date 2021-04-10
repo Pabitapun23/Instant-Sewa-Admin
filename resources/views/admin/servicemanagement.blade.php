@@ -117,7 +117,11 @@
                         <a href="{{ url('service-management/'. $key->id)}}" class="btn btn-success">EDIT</a>
                       </td>
                       <td>
-                        <a href="#" class="btn btn-danger">DELETE</a>
+                        <form action="{{ url('service-management-delete/'.$key->id)}}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="btn btn-danger">DELETE</button>
+                        </form>
                       </td>
                     </tr>
                 <?php }?>
