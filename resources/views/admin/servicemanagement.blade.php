@@ -16,7 +16,6 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="/save-services" method="POST">
             {{ csrf_field() }}
 
             <div class="modal-body">
@@ -115,7 +114,7 @@
                         <?php echo $key->image ?>
                       </td>
                       <td>
-                        <a href="#" class="btn btn-success">EDIT</a>
+                        <a href="{{ url('service-management/'. $key->id)}}" class="btn btn-success">EDIT</a>
                       </td>
                       <td>
                         <a href="#" class="btn btn-danger">DELETE</a>

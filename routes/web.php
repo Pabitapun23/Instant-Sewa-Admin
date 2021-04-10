@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth','admin']], function () {
 
     Route::get('/service-management', 'App\Http\Controllers\Admin\ServiceManagementController@registered');
     Route::post('/save-services', 'App\Http\Controllers\Admin\ServiceManagementController@store');
+    Route::get('/service-management/{id}', 'App\Http\Controllers\Admin\ServiceManagementController@edit');
+    Route::put('/service-management-update/{id}', 'App\Http\Controllers\Admin\ServiceManagementController@update');
 
     Route::get('/main-dashboard', 'App\Http\Controllers\Admin\MainDashboardController@mainDashboard');
 

@@ -34,4 +34,26 @@ class ServiceManagementController extends Controller
 
         return redirect('/service-management')->with('status', 'Data Added for Service Management');
     }
+
+    public function edit($id)
+    {
+        $services = Service::findOrFail($id);
+        return view('admin.edit')
+            ->with('services', $services);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $services = Service::findOrFail($id);
+        $services->name = $request->input('name');
+        $services->description = $request->input('description');
+        $services->quantity = $request->input('quantity');
+        $services->image = $request->input('image');
+        $services->sub_categories_id = $request->input('sub_categories_id');
+        $services->payment = $request->input('payment');
+        $services->update();
+
+        return redirect('/service-management')->with('status', 'Data Updated for Service Management Page');
+    }
+
 }
