@@ -129,6 +129,9 @@
             </table>
           </div>
         </div>
+        <span>
+            {{ $servicemgmnt-> links()}}
+        </span>
       </div>
     </div>
   </div>

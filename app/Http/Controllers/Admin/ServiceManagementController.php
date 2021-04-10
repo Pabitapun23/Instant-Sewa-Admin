@@ -12,7 +12,7 @@ class ServiceManagementController extends Controller
 {
     public function registered()
     {
-        $servicemgmnt = Service::all();
+        $servicemgmnt = Service::paginate(10);
         $users = User::all();
     	//$serviceprovider_count  = DB::table('users')->where('user_type', 'ServiceProvider')->count();
         return view('admin.servicemanagement')->with('users', $users)

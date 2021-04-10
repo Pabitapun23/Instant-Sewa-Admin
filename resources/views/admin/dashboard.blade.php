@@ -72,12 +72,6 @@
         <span>
          {{ $serviceprovider-> links()}}
         </span>
-        <style>
-            .w-5{
-              display: none;
-            }
-        </style>
-        <br>
       </div>
     </div>
     <div class="col-md-12">
