@@ -80,7 +80,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-md-4">
               <div class="card card-chart">
                 <div class="card-header card-header-success">
@@ -130,7 +130,24 @@
                 </div>
               </div>
             </div>
+          </div> --}}
+
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                  <h4 class="card-title">Taffic</h4>
+                  <p class="card-category">Statistics for the users</p>
+                </div>
+                <div class="card-body table-responsive">
+                    <div class="card-content">
+						<canvas id="myChart"></canvas>
+					</div>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
@@ -199,6 +216,111 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                  <h4 class="card-title">Taffic & Sales</h4>
+                  <p class="card-category">Statistics for the users</p>
+                </div>
+                <div class="card-body table-responsive">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card-content">
+                                <div class="progress-wrapper">
+                                    <p>
+                                        Popular Services (80)
+                                    <//p>
+                                    <div class="progress" style="height: 10px; width: 130.0px;">
+                                        <div class="bg-danger" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="card-content">
+                                <div class="progress-wrapper">
+                                    <p>
+                                        Login User (120)
+                                    </p>
+                                    <div class="progress" style="height: 10px; width: 100.0px;">
+                                        <div class="bg-primary" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="card-content">
+                                <div class="progress-wrapper">
+                                    <span>
+                                        Electrical
+                                        <span class="float-right">50%</span>
+                                    </span>
+                                    <div class="progress">
+                                        <div class="bg-danger" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-wrapper">
+                                    <span>
+                                        Plumbing
+                                        <span class="float-right">60%</span>
+                                    </span>
+                                    <div class="progress">
+                                        <div class="bg-danger" style="width:60%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-wrapper">
+                                    <span>
+                                        Painting
+                                        <span class="float-right">40%</span>
+                                    </span>
+                                    <div class="progress">
+                                        <div class="bg-danger" style="width:40%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-wrapper">
+                                    <span>
+                                        Cleaning
+                                        <span class="float-right">20%</span>
+                                    </span>
+                                    <div class="progress">
+                                        <div class="bg-danger" style="width:20%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card-content">
+                                <div class="progress-wrapper">
+                                    <span>
+                                        Male
+                                        <span class="float-right">50%</span>
+                                    </span>
+                                    <div class="progress">
+                                        <div class="bg-primary" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-wrapper">
+                                    <span>
+                                        Female
+                                        <span class="float-right">60%</span>
+                                    </span>
+                                    <div class="progress">
+                                        <div class="bg-primary" style="width:60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 @endsection
 
