@@ -85,7 +85,7 @@
             <div class="col-lg-12 col-md-12">
               <div class="card">
                 <div class="card-header card-header-tabs card-header-primary">
-                  <h4 class="card-title">Taffic</h4>
+                  <h4 class="card-title">Traffic</h4>
                   <p class="card-category">Statistics for the users</p>
                 </div>
                 <div class="card-body table-responsive">
