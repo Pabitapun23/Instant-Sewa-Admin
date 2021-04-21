@@ -148,7 +148,7 @@
           <nav class="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
+                <a href="./main-dashboard">
                   Instant Sewa
                 </a>
               </li>
@@ -159,7 +159,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Instant Sewa</a> for a better web.
+            <a href="./main-dashboard" target="_blank">Instant Sewa</a> for a better web.
           </div>
         </div>
       </footer>

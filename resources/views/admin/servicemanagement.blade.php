@@ -16,6 +16,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        <form action="/save-services" method="POST" >
             {{ csrf_field() }}
 
             <div class="modal-body">
@@ -51,7 +52,7 @@
         </form>
       </div>
     </div>
-  </div>
+</div>
 
 
 <div class="container-fluid">
