@@ -21,7 +21,7 @@
 
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Subcategory:</label><br>
+                    <label for="recipient-name" class="col-form-label">Services:</label><br>
                     <input type="text" name="name" class="form-control" id="recipient-name">
                   </div>
                 <div class="form-group">
@@ -77,7 +77,10 @@
                   ID
                 </th>
                 <th class="w-10p">
-                  Subcategory
+                  Category
+                </th>
+                <th class="w-10p">
+                  Services
                 </th>
                 <th class="w-10p">
                   Description
@@ -98,6 +101,9 @@
                     <tr>
                       <td>
                         <?php echo $key->id ?>
+                      </td>
+                      <td>
+                          Electrical
                       </td>
                       <td>
                         <?php echo $key->name ?>

@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
-//use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class ServiceManagementController extends Controller
 {
@@ -61,7 +61,7 @@ class ServiceManagementController extends Controller
         $services = Service::findOrFail($id);
         $services->delete();
 
-        return redirect('/service-management')->with('status', 'Data Deled for Service Management Page');
+        return redirect('/service-management')->with('status', 'Data Deleted for Service Management Page');
 
     }
 
