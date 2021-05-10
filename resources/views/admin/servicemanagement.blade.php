@@ -37,9 +37,14 @@
                     <input type="text" name="image" class="form-control" id="recipient-name">
                 </div>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Sub_Category_ID:</label><br>
-                    <input type="text" name="sub_categories_id" class="form-control" id="recipient-name">
-                </div>
+                    <label for="recipient-name" class="col-form-label" style="font-size: 14px">Sub_Category_ID:</label>
+                      <select name="sub_categories_id" class="form-control" id="recipient-name" style="height:27px; width:50px; padding-left:20px;">
+                        <option name="sub_categories_id" value="1">1</option>
+                        <option name="sub_categories_id" value="2">2</option>
+                        <option name="sub_categories_id" value="3">3</option>
+                      </select>
+                      <br>
+
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Payment:</label><br>
                     <input type="text" name="payment" class="form-control" id="recipient-name">
