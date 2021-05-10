@@ -23,7 +23,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Category status
+                    <i class="material-icons">local_offer</i> Here is the total number of categories
                   </div>
                 </div>
               </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
+                    <i class="material-icons">local_offer</i> Number of Services available for the users
                   </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
+                    <i class="material-icons">person</i> Number of Service Providers who are enrolled
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    <i class="material-icons">date_range</i> Amount of Bookings done by customers
                   </div>
                 </div>
               </div>
