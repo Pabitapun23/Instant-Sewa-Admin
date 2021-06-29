@@ -434,14 +434,36 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.min.js"></script>
 
   <script>
+    function dateWithMonths(months) {
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+
+  var date = new Date();
+  date.setMonth(date.getMonth() - months);
+  var n = month[date.getMonth()];
+
+  return n;
+
+}
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels:  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        labels: [dateWithMonths(11), dateWithMonths(10), dateWithMonths(9), dateWithMonths(8), dateWithMonths(7), dateWithMonths(6), dateWithMonths(5), dateWithMonths(4), dateWithMonths(2), dateWithMonths(1), dateWithMonths(0)],
         datasets: [{
             label: 'Bookings made by users',
-            data: [12, 19, 3, 5, 2, 3, 8, 10, 15, 6, 1, 13],
+            data: [{{$data1}}, {{$data2}}, {{$data3}}, {{$data4}}, {{$data5}}, {{$data6}}, {{$data7}}, {{$data8}}, {{$data9}}, {{$data10}}, {{$data11}}, {{$data12}}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -460,27 +482,6 @@
             ],
             borderWidth: 1
          },
-        //{
-        //     label: 'New Users',
-        //     data: [9, 16, 13, 4, 3, 5, 7, 11, 15, 8, 2, 10],
-        //     backgroundColor: [
-        //         'rgba(255, 99, 132, 0.2)',
-        //         'rgba(54, 162, 235, 0.2)',
-        //         'rgba(255, 206, 86, 0.2)',
-        //         'rgba(75, 192, 192, 0.2)',
-        //         'rgba(153, 102, 255, 0.2)',
-        //         'rgba(255, 159, 64, 0.2)'
-        //     ],
-        //     borderColor: [
-        //         'rgba(255, 99, 132, 1)',
-        //         'rgba(54, 162, 235, 1)',
-        //         'rgba(255, 206, 86, 1)',
-        //         'rgba(75, 192, 192, 1)',
-        //         'rgba(153, 102, 255, 1)',
-        //         'rgba(255, 159, 64, 1)'
-        //     ],
-        //     borderWidth: 1
-        // },
         ]
     },
     options: {
