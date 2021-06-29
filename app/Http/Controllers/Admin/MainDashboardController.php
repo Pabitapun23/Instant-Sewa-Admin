@@ -18,6 +18,10 @@ class MainDashboardController extends Controller
     	$serviceprovider_count  = DB::table('users')->where('user_type', 'ServiceProvider')->count();
     	$operation_count  = DB::table('operations')->count();
         $service_user_count = User::count();
+        $male_count  = DB::table('users')->where('gender', 'Male')->count();
+        $female_count  = DB::table('users')->where('gender', 'Female')->count();
+        $male_ratio = $male_count*100/$service_user_count;
+        $female_ratio = $female_count*100/$service_user_count;
         $data12 = MainDashboardController::operationCount(0);
         $data11 = MainDashboardController::operationCount(1);
         $data10 = MainDashboardController::operationCount(2);
@@ -47,7 +51,11 @@ class MainDashboardController extends Controller
         ->with('data9', $data9)
         ->with('data10', $data10)
         ->with('data11', $data11)
-        ->with('data12', $data12);
+        ->with('data12', $data12)
+        ->with('male', $male_count)
+        ->with('male_ratio', $male_ratio)
+        ->with('female', $female_count)
+        ->with('female_ratio', $female_ratio);
     }
 
     public static function operationCount($months)

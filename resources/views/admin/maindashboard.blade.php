@@ -123,7 +123,7 @@
                             <div class="card-content">
                                 <div class="progress-wrapper">
                                     <p>
-                                        Login User (120)
+                                        Login User (<?php echo $service_user_count; ?>)
                                     </p>
                                     <div class="progress" style="height: 10px; width: 100.0px;">
                                         <div class="bg-primary" style="width: 100%"></div>
@@ -178,19 +178,19 @@
                                 <div class="progress-wrapper">
                                     <span>
                                         Male
-                                        <span class="float-right">50%</span>
+                                        <span class="float-right"><?php echo $male; ?></span>
                                     </span>
                                     <div class="progress">
-                                        <div class="bg-primary" style="width: 50%"></div>
+                                        <div class="bg-primary" style="width: <?php echo $male_ratio; ?>%"></div>
                                     </div>
                                 </div>
                                 <div class="progress-wrapper">
                                     <span>
                                         Female
-                                        <span class="float-right">60%</span>
+                                        <span class="float-right"><?php echo $female; ?></span>
                                     </span>
                                     <div class="progress">
-                                        <div class="bg-primary" style="width:60%"></div>
+                                        <div class="bg-primary" style="width: <?php echo $female_ratio; ?>%"></div>
                                     </div>
                                 </div>
                             </div>
