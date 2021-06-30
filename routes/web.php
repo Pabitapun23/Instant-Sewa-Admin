@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth','admin']], function () {
 
     Route::get('/dashboard', 'App\Http\Controllers\Admin\UserManagementController@userData');
+    Route::get('/transaction-management', 'App\Http\Controllers\Admin\TransactionManagementController@userData');
 
     Route::get('/service-management', 'App\Http\Controllers\Admin\ServiceManagementController@registered');
     Route::post('/save-services', 'App\Http\Controllers\Admin\ServiceManagementController@store');

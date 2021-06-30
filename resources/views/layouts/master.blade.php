@@ -49,8 +49,8 @@
               <p>Service Management</p>
             </a>
           </li>
-          <li class="{{ '' == request()->path() ? 'active' : '' }}">
-            <a class="nav-link" href="./service-management">
+          <li class="{{ 'transaction-management' == request()->path() ? 'active' : '' }}">
+            <a class="nav-link" href="./transaction-management">
               <i class="material-icons">language</i>
               <p>Transaction Management</p>
             </a>

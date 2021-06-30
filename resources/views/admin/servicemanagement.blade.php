@@ -44,7 +44,7 @@
                         <option name="sub_categories_id" value="3">3</option>
                       </select>
                       <br>
-
+                </div>
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Payment:</label><br>
                     <input type="text" name="payment" class="form-control" id="recipient-name">
