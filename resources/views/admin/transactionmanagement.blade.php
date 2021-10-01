@@ -21,16 +21,16 @@
                   ID
                 </th>
                 <th>
-                  Payment ID
+                  Cart Name
                 </th>
                 <th>
-                  Payer ID
+                  Payer Name
                 </th>
                 <th>
                   Payer Email
                 </th>
                 <th>
-                  Cart ID
+                  Payee Name
                 </th>
                 <th>
                   Amount
@@ -49,32 +49,40 @@
                 </th>
               </thead>
               <tbody>
-                <?php foreach ($serviceprovider as $key){?>
+                <?php foreach ($payment as $key){?>
                 <tr>
                   <td>
-                    <?php echo $key->id ?>
+                    <?php echo $key->payment_id ?>
                   </td>
                   <td>
-                    <?php echo $key->username ?>
+                    <?php echo $key->cartname ?>
                   </td>
                   <td>
-                    <?php echo $key->phoneno; ?>
+                    <?php echo $key->payer_name; ?>
                   </td>
                   <td>
-                    <?php echo $key->email; ?>
+                    <?php echo $key->payer_email; ?>
                   </td>
                   <td>
-                    <?php echo $key->address_address ?>
+                    <?php echo $key->payee_name ?>
                   </td>
                   <td>
-                    <?php echo $key->rating ?>
+                    <?php echo $key->amount ?>
                   </td>
                   <td>
-                    <?php echo $key->occupation ?>
+                    <?php echo $key->currency ?>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <?php echo $key->payment_status ?>
+                      
+                    </td>
+                  <td>
+                    <?php echo $key->created_at ?>
+                      
+                    </td>
+                  <td>
+                    <?php echo $key->updated_at ?>
+                    </td>
                 </tr>
               <?php }?>
               </tbody>
@@ -82,7 +90,7 @@
           </div>
         </div>
         <span>
-         {{ $serviceprovider-> links()}}
+         {{ $payment-> links()}}
         </span>
       </div>
     </div>

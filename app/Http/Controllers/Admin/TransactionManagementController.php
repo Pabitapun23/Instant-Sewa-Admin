@@ -10,53 +10,30 @@ class TransactionManagementController extends Controller
 {
      public function userData()
     {
-    	$serviceproviders  = DB::table('users')->where('user_type', 'ServiceProvider')->paginate(5);
-    	//$serviceuser  = DB::table('users')->where('user_type', 'serviceuser')->get();
-    	$serviceproviders->map(function ($serviceprovider) {
-        $serviceprovider->occupation = TransactionManagementController::categoryName($serviceprovider->id);
-        $serviceprovider->rating = TransactionManagementController::rating($serviceprovider->id);
+    	$payments  = DB::table('payments')->paginate(10);
+    	$payments->map(function ($payment) {
+        $payment->cartname = TransactionManagementController::cartName($payment->cart_id);
+        $payment->payer_name = TransactionManagementController::serviceuserName($payment->cart_id);
+        $payment->payee_name = TransactionManagementController::serviceproviderName($payment->cart_id);
        });
-       return view('admin.transactionmanagement')->with('serviceprovider',$serviceproviders);
+       return view('admin.transactionmanagement')->with('payment',$payments);
      // return $serviceproviders;
     }
-    public static function rating($id)
+    public static function cartName($id)
     {
-        $rating =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get()->pluck('rating');
-        $count = count($rating);
-        $sum = 0.0;
-        if($count == 0)
-        {
-            return 0.0;
-        }
-        else{
-        for ($i=0; $i <$count ; $i++)
-         {
-            $sum = $sum + $rating[$i];
-         }
-         $rate = $sum / $count;
-         return $rate;
+        $name =  DB::table('cart_groups')->where('id', $id)->get()->pluck('collection_name');
+         return $name[0];
     }
-}
-   public static function categoryName($id)
+   public static function serviceuserName($id)
     {
-         $subcategories_id = DB::table('sub_category_service_providers')->where('service_provider_id', $id)->get()->pluck('subcategories_id');
-        $categories_id = DB::table('sub_categories')->whereIn('id', $subcategories_id)->get()->pluck('category_id');
-        $categories_name=DB::table('categories')->whereIn('id', $subcategories_id)->get()->pluck('name');
-        $count = count($categories_name);
-        $occupation="";
-        for ($i=0; $i <$count ; $i++) {
-            if($i==$count-2)
-            {
-                $occupation=$occupation.$categories_name[$i]."&";
-             }
-            elseif($i==$count-1){
-                $occupation=$occupation.$categories_name[$i].".";
-            }
-            else{
-                $occupation=$occupation.$categories_name[$i].",";
-            }
-        }
-
-        return $occupation;
+         $serviceproviderId =  DB::table('operations')->where('cart_collection_id', $id)->get()->pluck('service_user_id');
+         $name =  DB::table('users')->where('id', $serviceproviderId)->get()->pluck('username');
+        return $name[0];
+    }
+    public static function serviceproviderName($id)
+    {
+         $serviceproviderId =  DB::table('operations')->where('cart_collection_id', $id)->get()->pluck('service_provider_id');
+         $name =  DB::table('users')->where('id', $serviceproviderId)->get()->pluck('username');
+        return $name[0];
     }
 }
