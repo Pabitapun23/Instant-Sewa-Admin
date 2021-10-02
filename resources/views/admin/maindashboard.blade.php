@@ -111,7 +111,7 @@
                             <div class="card-content">
                                 <div class="progress-wrapper">
                                     <p>
-                                        Popular Services (80)
+                                        Popular Services (<?php echo $totalpopularservicecount; ?>)
                                     <//p>
                                     <div class="progress" style="height: 10px; width: 130.0px;">
                                         <div class="bg-danger" style="width: 100%"></div>
@@ -137,38 +137,38 @@
                             <div class="card-content">
                                 <div class="progress-wrapper">
                                     <span>
-                                        Electrical
-                                        <span class="float-right">50%</span>
+                                        <?php echo $popularservicename; ?>
+                                        <span class="float-right"><?php echo $popularservicecount; ?></span>
                                     </span>
                                     <div class="progress">
-                                        <div class="bg-danger" style="width: 50%"></div>
+                                        <div class="bg-danger" style="width: <?php echo $popularservicecountratio; ?>%"></div>
                                     </div>
                                 </div>
                                 <div class="progress-wrapper">
                                     <span>
-                                        Plumbing
-                                        <span class="float-right">60%</span>
+                                        <?php echo $popularservicename2; ?>
+                                        <span class="float-right"><?php echo $popularservicecount2; ?></span>
                                     </span>
                                     <div class="progress">
-                                        <div class="bg-danger" style="width:60%"></div>
+                                        <div class="bg-danger" style="width:<?php echo $popularservicecountratio2; ?>%"></div>
                                     </div>
                                 </div>
                                 <div class="progress-wrapper">
                                     <span>
-                                        Painting
-                                        <span class="float-right">40%</span>
+                                        <?php echo $popularservicename3; ?>
+                                        <span class="float-right"><?php echo $popularservicecount3; ?></span>
                                     </span>
                                     <div class="progress">
-                                        <div class="bg-danger" style="width:40%"></div>
+                                        <div class="bg-danger" style="width:<?php echo $popularservicecountratio3; ?>%"></div>
                                     </div>
                                 </div>
                                 <div class="progress-wrapper">
                                     <span>
-                                        Cleaning
-                                        <span class="float-right">20%</span>
+                                        <?php echo $popularservicename4; ?>
+                                        <span class="float-right"><?php echo $popularservicecount4; ?></span>
                                     </span>
                                     <div class="progress">
-                                        <div class="bg-danger" style="width:20%"></div>
+                                        <div class="bg-danger" style="width:<?php echo $popularservicecountratio4; ?>%"></div>
                                     </div>
                                 </div>
                             </div>

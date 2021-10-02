@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::delete('service-management-delete/{id}', 'App\Http\Controllers\Admin\ServiceManagementController@delete');
 
     Route::get('/main-dashboard', 'App\Http\Controllers\Admin\MainDashboardController@mainDashboard');
+    Route::get('/user-payment-management', 'App\Http\Controllers\Admin\UserPaymentController@userPaymentData');
     Route::get('/month/{id}', 'App\Http\Controllers\Admin\MainDashboardController@operationCount');
 
 });
