@@ -21,4 +21,8 @@ class UserPaymentController extends Controller
         $payment =  DB::table('transactions')->where('service_provider_id', $id)->get()->pluck('payment');
         return $payment[0];
     }
+    public static function userPay()
+    {
+
+    }
 }

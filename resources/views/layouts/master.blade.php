@@ -24,7 +24,7 @@
 </head>
 
 <body class="">
-  <div class="wrapper ">
+  <div class="wrapper">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <div class="logo"><a href="./main-dashboard" class="simple-text logo-normal">
          Instant Sewa
@@ -58,7 +58,7 @@
           <li class="{{ 'user-payment-management' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./user-payment-management">
               <i class="material-icons">money</i>
-              <p>User Payment Management</p>
+              <p>User Payment Mgmt</p>
             </a>
           </li>
         </ul>

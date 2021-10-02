@@ -82,7 +82,7 @@
           <li class="{{ 'user-payment-management' == request()->path() ? 'active' : '' }}">
             <a class="nav-link" href="./user-payment-management">
               <i class="material-icons">money</i>
-              <p>User Payment Management</p>
+              <p>User Payment Mgmt</p>
             </a>
           </li>
         </ul>
