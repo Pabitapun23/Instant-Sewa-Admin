@@ -21,8 +21,9 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Amount:</label><br>
-                    <input type="text" name="name" class="form-control" id="recipient-name">
+                    <input type="text" name="amount" class="form-control" id="recipient-name">
                   </div>
+                   <input id="feed_id" name="cid" type="hidden" value="" />
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -70,19 +71,19 @@
                 <?php foreach ($serviceproviders as $key){?>
                     <tr>
                       <td>
-                        <?php echo $key->id ?>
+                        <?php echo $key->id; ?>
                       </td>
                       <td>
-                          <?php echo $key->username ?>
+                          <?php echo $key->username; ?>
                       </td>
                       <td>
-                        <?php echo $key->fullname ?>
+                        <?php echo $key->fullname; ?>
                       </td>
                       <td>
                         <?php echo $key->payment_remaining; ?>
                       </td>
                         <td>
-                            <button type="button" class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal">Pay</button>
+                            <button type="button" class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" data-id="<?php echo $key->id  ?>">Pay</button>
                       </td>
                     </tr>
                 <?php }?>
@@ -101,5 +102,9 @@
 
 
 @section('scripts')
-
+<script type="text/javascript">
+$(document).on('click', '.float-center',function(){
+  dd('hi');
+});
+</script>
 @endsection
