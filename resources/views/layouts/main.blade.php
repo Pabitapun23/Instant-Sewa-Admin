@@ -85,6 +85,12 @@
               <p>User Payment Mgmt</p>
             </a>
           </li>
+          <li class="{{ 'user-feedback' == request()->path() ? 'active' : '' }}">
+            <a class="nav-link" href="./user-feedback">
+              <i class="material-icons">bubble_chart</i>
+              <p>User Feedback</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    User Manage | Instant Sewa
+    User Feedback | Instant Sewa
 @endsection
 
 @section('content')
@@ -10,10 +10,15 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title ">Transaction Management</h4>
-            <p class="card-category">Here all the transactions are managed</p>
+          <h4 class="card-title ">User Feedback Management</h4>
+            <p class="card-category">Here all the feedbacks of users are managed</p>
         </div>
         <div class="card-body">
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
@@ -21,69 +26,52 @@
                   ID
                 </th>
                 <th>
-                  Cart Name
+                  Username
                 </th>
                 <th>
-                  Payer Name
+                  Feedback
                 </th>
                 <th>
-                  Payer Email
+                  Email
                 </th>
                 <th>
-                  Payee Name
+                  Created At
                 </th>
                 <th>
-                  Amount
+                  Updated At
                 </th>
                 <th>
-                  Currency
-                </th>
-                <th>
-                    Payment Status
-                </th>
-                <th>
-                    Created At
-                </th>
-                <th>
-                    Updated At
                 </th>
               </thead>
               <tbody>
-                <?php foreach ($payment as $key){?>
+                <?php foreach ($feedback as $key){?>
                 <tr>
                   <td>
-                    <?php echo $key->payment_id ?>
+                    <?php echo $key->id ?>
                   </td>
                   <td>
-                    <?php echo $key->cartname ?>
+                    <?php echo $key->username ?>
                   </td>
                   <td>
-                    <?php echo $key->payer_name; ?>
+                    <?php echo $key->feedback; ?>
                   </td>
                   <td>
-                    <?php echo $key->payer_email; ?>
+                    <?php echo $key->email; ?>
                   </td>
-                  <td>
-                    <?php echo $key->payee_name ?>
-                  </td>
-                  <td>
-                    <?php echo $key->amount ?>
-                  </td>
-                  <td>
-                    <?php echo $key->currency ?>
-                  </td>
-                  <td>
-                    <?php echo $key->payment_status ?>
-
-                    </td>
                   <td>
                     <?php echo $key->created_at ?>
 
                     </td>
                   <td>
                     <?php echo $key->updated_at ?>
-                    </td>
-                    
+                  </td>
+                  <td>
+                    <form action="{{ url('user-feedback-delete/'.$key->id)}}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button type="submit" class="btn btn-danger">DELETE</button>
+                    </form>
+                  </td>
                 </tr>
               <?php }?>
               </tbody>
@@ -91,7 +79,7 @@
           </div>
         </div>
         <span>
-         {{ $payment-> links()}}
+         {{ $feedback-> links()}}
         </span>
       </div>
     </div>
