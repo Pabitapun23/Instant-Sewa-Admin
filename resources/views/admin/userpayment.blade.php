@@ -4,7 +4,15 @@
     Service Management | Instant Sewa
 @endsection
 
-
+<script type="text/javascript">
+  function pay_button(userid) {
+        $('#exampleModal').on('click', function(e) {
+           var link = $(e.target),
+            modal = $(this);
+            modal.find('#userId').val(userid);
+    });
+  }
+</script>
 @section('content')
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -23,7 +31,7 @@
                     <label for="recipient-name" class="col-form-label">Amount:</label><br>
                     <input type="text" name="amount" class="form-control" id="recipient-name">
                   </div>
-                   <input id="feed_id" name="cid" type="hidden" value="" />
+                   <input id="userId" name="id" type="hidden"/>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -83,7 +91,8 @@
                         <?php echo $key->payment_remaining; ?>
                       </td>
                         <td>
-                            <button type="button" class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" data-id="<?php echo $key->id  ?>">Pay</button>
+                          <input type="hidden" name="userId"id="userId" value="12345">
+                            <button type="button" id = "payButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal"onclick="pay_button(<?php echo $key->id;?>)">Pay</button>
                       </td>
                     </tr>
                 <?php }?>
@@ -102,9 +111,4 @@
 
 
 @section('scripts')
-<script type="text/javascript">
-$(document).on('click', '.float-center',function(){
-  dd('hi');
-});
-</script>
 @endsection
