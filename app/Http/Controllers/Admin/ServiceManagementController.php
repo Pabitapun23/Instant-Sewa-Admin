@@ -48,9 +48,8 @@ class ServiceManagementController extends Controller
         $services->name = $request->input('name');
         $services->description = $request->input('description');
         $services->quantity = $request->input('quantity');
-        $services->image = $request->input('image');
-        $services->sub_categories_id = $request->input('sub_categories_id');
         $services->payment = $request->input('payment');
+        $services->sub_categories_id = $request->input('sub_categories_id');
         $services->update();
 
         return redirect('/service-management')->with('status', 'Data Updated for Service Management Page');

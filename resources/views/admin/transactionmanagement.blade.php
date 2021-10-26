@@ -74,16 +74,13 @@
                   </td>
                   <td>
                     <?php echo $key->payment_status ?>
-
-                    </td>
+                  </td>
                   <td>
                     <?php echo $key->created_at ?>
-
-                    </td>
+                  </td>
                   <td>
                     <?php echo $key->updated_at ?>
-                    </td>
-                    
+                 </td>
                 </tr>
               <?php }?>
               </tbody>

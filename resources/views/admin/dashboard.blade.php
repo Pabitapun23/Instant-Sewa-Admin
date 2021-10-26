@@ -38,6 +38,8 @@
                 <th>
                   Services
                 </th>
+                <th>
+                </th>
               </thead>
               <tbody>
                 <?php foreach ($serviceprovider as $key){?>
@@ -63,6 +65,9 @@
                   <td>
                     <?php echo $key->occupation ?>
                   </td>
+                  <td>
+                    <button type="button" id = "blockButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" onclick="">Block</button>
+                </td>
                 </tr>
               <?php }?>
               </tbody>

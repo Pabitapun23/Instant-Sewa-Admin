@@ -78,27 +78,29 @@
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
-                <th class="w-10p">
+                <th>
                   ID
                 </th>
-                <th class="w-10p">
+                <th>
                   Category
                 </th>
-                <th class="w-10p">
+                <th>
                   Services
                 </th>
-                <th class="w-10p">
-                  Description
+                <th>
+                   Description
                 </th>
-                <th class="w-10p">
-                  Quantity
+                <th>
+                   Quantity
                 </th>
-                <th class="w-10p">
-                  Image
+                <th>
+                   Payment
                 </th>
-                <th class="w-10p">
+                <th>
                 </th>
-                <th class="w-10p">
+                <th>
+                </th>
+                <th>
                 </th>
               </thead>
               <tbody>
@@ -123,7 +125,7 @@
                         <?php echo $key->quantity ?>
                       </td>
                       <td>
-                        <?php echo $key->image ?>
+                        <?php echo $key->payment ?>
                       </td>
                       <td>
                         <a href="{{ url('service-management/'. $key->id)}}" class="btn btn-success">EDIT</a>
