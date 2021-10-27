@@ -77,12 +77,6 @@
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="javascript:;"></a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -90,14 +84,12 @@
                     <i class="material-icons">person</i>
                   {{ Auth::user()->name }}
                 </a>
-
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                   </a>
-
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                   </form>
