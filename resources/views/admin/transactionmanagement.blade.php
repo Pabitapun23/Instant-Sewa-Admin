@@ -39,6 +39,9 @@
                   Currency
                 </th>
                 <th>
+                    Platform
+                </th>
+                <th>
                     Payment Status
                 </th>
                 <th>
@@ -71,6 +74,9 @@
                   </td>
                   <td>
                     <?php echo $key->currency ?>
+                  </td>
+                  <td>
+                    <?php echo $key->platform ?>
                   </td>
                   <td>
                     <?php echo $key->payment_status ?>
