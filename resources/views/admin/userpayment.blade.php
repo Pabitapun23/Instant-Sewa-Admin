@@ -101,7 +101,7 @@
                         <?php echo $key->payment_remaining; ?>
                       </td>
                         <td>
-                          <input type="hidden" name="userId"id="userId" value="12345">
+                          <input type="hidden" name="userId"id="userId" value="">
                             <button type="button" id = "payButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal"onclick="pay_button(<?php echo $key->id;?>)">Pay</button>
                       </td>
                     </tr>
