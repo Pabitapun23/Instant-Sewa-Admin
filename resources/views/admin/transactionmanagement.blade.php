@@ -4,6 +4,35 @@
     Transaction Management | Instant Sewa
 @endsection
 
+<script>
+(function($){
+    $(document).ready(function(){
+    console.log('hello');
+// fetch_customer_data();
+
+// function fetch_customer_data(query = '')
+// {
+//  $.ajax({
+//   url:"{{ route('transactionManagement-search') }}",
+//   method:'GET',
+//   data:{query:query},
+//   dataType:'json',
+//   success:function(data)
+//   {
+//    $('tbody').html(data.table_data);
+//    $('#total_records').text(data.total_data);
+//   }
+//  })
+// }
+
+// $(document).on('keyup', '#search', function(){
+//  var query = $(this).val();
+//  fetch_customer_data(query);
+// });
+});
+});
+</script>
+
 @section('content')
 <div class="container-fluid">
   <div class="row">
@@ -12,9 +41,9 @@
         <div class="card-header card-header-primary">
           <h4 class="card-title ">Transaction Management
               <div class="card-category float-right">
-                <input type="text" value="" class="search" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
+                <input type="text" name="search" id="search" class="form-control" placeholder="Search Customer Data">
+                {{-- <button type="submit" class="btn btn-white btn-round btn-just-icon"> --}}
+                  {{-- <i class="material-icons">search</i> --}}
                 </button>
               </div>
            </h4>

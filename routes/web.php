@@ -43,4 +43,6 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::get('/month/{id}', 'App\Http\Controllers\Admin\MainDashboardController@operationCount');
     Route::get('/recharge-management', 'App\Http\Controllers\Admin\RechargeManagementController@userData');
 
+    Route::get('/transactionManagement-search', 'App\Http\Controllers\Admin\TransactionManagementController@search')->name('transactionManagement-search');
+
 });

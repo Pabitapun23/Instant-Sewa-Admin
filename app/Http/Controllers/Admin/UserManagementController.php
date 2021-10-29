@@ -74,14 +74,14 @@ class UserManagementController extends Controller
         else{
             DB::table('users')->where('id', $request->input('id'))->update(['block_status'=>1]);
             $blockamount = $block_status = DB::table('users')->where('id', $request->input('id'))->get()->pluck('block_amount');
-            if($blockamount[0] == 4){
-                $users = User::findOrFail($request->input('id'));
-        $users->delete();
-            }
-                else{
+        //     if($blockamount[0] == 4){
+        //         $users = User::findOrFail($request->input('id'));
+        // $users->delete();
+        //     }
+         //       else{
             $totalblockamount = $blockamount[0]+1;
-            DB::table('users')->where('id', $request->input('id'))->update(['block_amount'=>$totalblockamount]);       
-        }
+            DB::table('users')->where('id', $request->input('id'))->update(['block_amount'=>$totalblockamount]);
+     //   }
         return redirect('/dashboard')->with('status', 'Data Updated');
     }
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,5 +36,13 @@ class TransactionManagementController extends Controller
          $serviceproviderId =  DB::table('operations')->where('cart_collection_id', $id)->get()->pluck('service_provider_id');
          $name =  DB::table('users')->where('id', $serviceproviderId)->get()->pluck('username');
         return $name[0];
+    }
+
+    public function search(Request $request) {
+        if($request->ajax()) {
+            $output = '';
+            $query = $request->get('query');
+            return $query;
+        }
     }
 }
