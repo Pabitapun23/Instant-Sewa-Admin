@@ -14,6 +14,11 @@
             <p class="card-category">Service Provider gives service to customers</p>
         </div>
         <div class="card-body">
+           @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
@@ -66,7 +71,22 @@
                     <?php echo $key->occupation ?>
                   </td>
                   <td>
-                    <button type="button" id = "blockButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" onclick="<?php echo  ?>">Block</button>
+                    <form action="{{ url('dashboard-block')}}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('POST') }}
+                            <input id="userId" name="id" type="hidden" value="<?php echo $key->id;?>" />
+                            <button type="submit" class="<?php if ($key->block_status == false) {
+                      echo"btn btn-danger";
+                    }
+                    else{
+                     echo "btn btn-success"; 
+                    }  ?>"><?php if ($key->block_status == false) {
+                      echo"Block";
+                    }
+                    else{
+                     echo "UnBlock"; 
+                    }  ?></button>
+                        </form>
                 </td>
                 </tr>
               <?php }?>
@@ -132,7 +152,22 @@
                     Fan repair
                   </td>
                   <td>
-                    <button type="button" id = "blockButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" onclick="">Block</button>
+                     <form action="{{ url('dashboard-block')}}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('POST') }}
+                            <input id="userId" name="id" type="hidden" value="<?php echo $key->id;?>" />
+                            <button type="submit" class="<?php if ($key->block_status == false) {
+                      echo"btn btn-danger";
+                    }
+                    else{
+                     echo "btn btn-success"; 
+                    }  ?>"><?php if ($key->block_status == false) {
+                      echo"Block";
+                    }
+                    else{
+                     echo "UnBlock"; 
+                    }  ?></button>
+                        </form>
                 </td>
                 </tr>
                <?php }?>
@@ -148,9 +183,5 @@
 @endsection
 
 @section('scripts')
-    <!-- <script>
-        $(document).ready( function () {
-          $('#dataTable').DataTable();
-        } );
-    </script> -->
+
 @endsection
