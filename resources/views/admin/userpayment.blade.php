@@ -4,15 +4,19 @@
     Service Management | Instant Sewa
 @endsection
 
+
+@section('scripts')
 <script type="text/javascript">
-  function pay_button(userid) {
-        $('#exampleModal').on('click', function(e) {
-           var link = $(e.target),
-            modal = $(this);
-            modal.find('#userId').val(userid);
-    });
-  }
-</script>
+    function pay_button(userid) {
+          $('#exampleModal').on('click', function(e) {
+             var link = $(e.target),
+              modal = $(this);
+              modal.find('#userId').val(userid);
+      });
+    }
+  </script>
+@endsection
+
 @section('content')
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,8 +52,14 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title ">User Payment Management &nbsp
-          </h4>
+          <h4 class="card-title ">User Payment Management
+            <div class="card-title float-right">
+                <input type="text" value="" class="search" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                </button>
+            </div>
+        </h4>
         </div>
         <div class="card-body">
         @if (session('status'))
@@ -110,5 +120,4 @@
 @endsection
 
 
-@section('scripts')
-@endsection
+

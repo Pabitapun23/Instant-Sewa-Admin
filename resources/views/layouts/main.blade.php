@@ -86,6 +86,12 @@
               <p>User Feedback</p>
             </a>
           </li>
+          <li class="{{ 'recharge-management' == request()->path() ? 'active' : '' }}">
+            <a class="nav-link" href="./recharge-management">
+              <i class="material-icons">money</i>
+              <p>Recharge Management</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

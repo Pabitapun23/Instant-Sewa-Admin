@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.nosidebar')
 
 @section('title')
     Edit Page | Instant Sewa

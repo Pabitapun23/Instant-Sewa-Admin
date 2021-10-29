@@ -66,7 +66,7 @@
                     <?php echo $key->occupation ?>
                   </td>
                   <td>
-                    <button type="button" id = "blockButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" onclick="">Block</button>
+                    <button type="button" id = "blockButton"  class="btn btn-primary float-center" data-toggle="modal" data-target="#exampleModal" onclick="<?php echo  ?>">Block</button>
                 </td>
                 </tr>
               <?php }?>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Transaction Management | Instant Sewa
+    Recharge Management | Instant Sewa
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title ">Transaction Management
+          <h4 class="card-title ">Recharge Management
               <div class="card-category float-right">
                 <input type="text" value="" class="search" placeholder="Search...">
                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
@@ -18,38 +18,29 @@
                 </button>
               </div>
            </h4>
-           <p class="card-category">Here all the transactions are managed</p>
+           <p class="card-category">Here all the recharges are managed</p>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-primary">
                 <th>
-                  ID
+                  Payment ID
                 </th>
                 <th>
-                  Cart Name
+                  Service Provider Name
                 </th>
                 <th>
-                  Payer Name
-                </th>
-                <th>
-                  Payer Email
-                </th>
-                <th>
-                  Payee Name
-                </th>
-                <th>
-                  Amount
+                  Payment Recharge
                 </th>
                 <th>
                   Currency
                 </th>
                 <th>
-                    Platform
+                  Platform
                 </th>
                 <th>
-                    Payment Status
+                  Payment Status
                 </th>
                 <th>
                     Created At
@@ -59,25 +50,16 @@
                 </th>
               </thead>
               <tbody>
-                <?php foreach ($payment as $key){?>
+                <?php foreach ($recharge as $key){?>
                 <tr>
                   <td>
                     <?php echo $key->payment_id ?>
                   </td>
                   <td>
-                    <?php echo $key->cartname ?>
+                    <?php echo $key->service_provider_name ?>
                   </td>
                   <td>
-                    <?php echo $key->payer_name; ?>
-                  </td>
-                  <td>
-                    <?php echo $key->payer_email; ?>
-                  </td>
-                  <td>
-                    <?php echo $key->payee_name ?>
-                  </td>
-                  <td>
-                    <?php echo $key->amount ?>
+                    <?php echo $key->payment_recharge; ?>
                   </td>
                   <td>
                     <?php echo $key->currency ?>
@@ -101,7 +83,7 @@
           </div>
         </div>
         <span>
-         {{ $payment-> links()}}
+         {{ $recharge-> links()}}
         </span>
       </div>
     </div>

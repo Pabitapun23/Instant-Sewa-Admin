@@ -37,13 +37,10 @@
                     <input type="text" name="image" class="form-control" id="recipient-name">
                 </div>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label" style="font-size: 14px">Sub_Category_ID:</label>
-                      <select name="sub_categories_id" class="form-control" id="recipient-name" style="height:27px; width:50px; padding-left:20px;">
-                        <option name="sub_categories_id" value="1">1</option>
-                        <option name="sub_categories_id" value="2">2</option>
-                        <option name="sub_categories_id" value="3">3</option>
+                    <label for="recipient-name" class="col-form-label" style="font-size: 14px">Sub Category Id:</label>
+                      <select name="subCategoryId" class="form-control" id="recipient-name" style="height:27px; width:200px; padding-left:20px;">
+                        <?php foreach ($subCategoriesId as $key){?><option name="subCategoryId" value="<?php echo $key ?>"><?php echo $key ?></option><?php }?>
                       </select>
-                      <br>
                 </div>
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Payment:</label><br>
@@ -66,7 +63,7 @@
       <div class="card">
         <div class="card-header card-header-primary">
           <h4 class="card-title ">Services Management &nbsp
-            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">ADD</button>
+            <button type="button" class="btn btn-white float-right" data-toggle="modal" data-target="#exampleModal">ADD</button>
           </h4>
         </div>
         <div class="card-body">
@@ -110,7 +107,7 @@
                         <?php echo $key->id ?>
                       </td>
                       <td>
-                          Electrical
+                        <?php echo $key->categoryname ?>
                       </td>
                       <td>
                         <?php echo $key->name ?>

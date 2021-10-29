@@ -40,5 +40,6 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::delete('/user-feedback-delete/{id}', 'App\Http\Controllers\Admin\UserFeedbackController@delete');
     Route::post('/calculate-amount', 'App\Http\Controllers\Admin\UserPaymentController@userPay');
     Route::get('/month/{id}', 'App\Http\Controllers\Admin\MainDashboardController@operationCount');
+    Route::get('/recharge-management', 'App\Http\Controllers\Admin\RechargeManagementController@userData');
 
 });
