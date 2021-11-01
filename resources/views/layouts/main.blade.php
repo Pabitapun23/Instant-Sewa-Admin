@@ -92,6 +92,12 @@
               <p>Recharge Management</p>
             </a>
           </li>
+          <li class="{{ 'review-management' == request()->path() ? 'active' : '' }}">
+            <a class="nav-link" href="./review-management">
+              <i class="material-icons">money</i>
+              <p>Review Management</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

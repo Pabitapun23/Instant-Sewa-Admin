@@ -4,34 +4,36 @@
     Transaction Management | Instant Sewa
 @endsection
 
+@section('scripts')
 <script>
-(function($){
-    $(document).ready(function(){
-    console.log('hello');
-// fetch_customer_data();
+    (function($){
+        $(document).ready(function(){
+        console.log('hello');
+    // fetch_customer_data();
 
-// function fetch_customer_data(query = '')
-// {
-//  $.ajax({
-//   url:"{{ route('transactionManagement-search') }}",
-//   method:'GET',
-//   data:{query:query},
-//   dataType:'json',
-//   success:function(data)
-//   {
-//    $('tbody').html(data.table_data);
-//    $('#total_records').text(data.total_data);
-//   }
-//  })
-// }
+    // function fetch_customer_data(query = '')
+    // {
+    //  $.ajax({
+    //   url:"{{ route('transactionManagement-search') }}",
+    //   method:'GET',
+    //   data:{query:query},
+    //   dataType:'json',
+    //   success:function(data)
+    //   {
+    //    $('tbody').html(data.table_data);
+    //    $('#total_records').text(data.total_data);
+    //   }
+    //  })
+    // }
 
-// $(document).on('keyup', '#search', function(){
-//  var query = $(this).val();
-//  fetch_customer_data(query);
-// });
-});
-});
+    // $(document).on('keyup', '#search', function(){
+    //  var query = $(this).val();
+    //  fetch_customer_data(query);
+    // });
+    });
+    });
 </script>
+@endsection
 
 @section('content')
 <div class="container-fluid">
@@ -138,6 +140,4 @@
 </div>
 @endsection
 
-@section('scripts')
 
-@endsection
