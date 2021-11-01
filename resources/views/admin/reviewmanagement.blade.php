@@ -21,21 +21,36 @@
         </div>
     </div>
     <div class="row">
+        <?php foreach ($serviceprovider as $key) { ?>
+      <a href="{{ url('/review-management/'.$key->id) }}">
       <div class="col-lg-4 col-md-4">
         <div class="card card-stats">
           <div class="card-header card-header-warning card-header-icon">
-            <a href="#" class="" style="margin-top: 10px;">Service Provider Name</a>
-            <p class="card-category"> Average Rating</p>
+            <p class="card-title" style="margin-top: 10px;"><?php echo $key-> fullname?> (<?php echo $key->username ?>)</p>
+            <?php
+                $stars = round($key->rating);
+                $i = 0;
+                while($i < $stars) {
+                 $i++;
+            ?>
+            <span class="fa fa-star checked"></span>
+           <?php } ?>
+           <p class="card-title" style="margin-top: 5px;"><?php echo $key-> rating?></p>
           </div>
           <div class="card-footer">
             <div class="stats">
-              <i class="material-icons">local_offer</i> <p>A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+              <i class="material-icons">local_offer</i> <p><?php echo $key-> review?></p>
             </div>
           </div>
           <a href="#" class="btn btn-primary" style="width: 100px; margin-left:120px; margin-bottom: 15px;">Block</a>
         </div>
       </div>
-
+       <?php } ?>
+      </a>
+    </div>
+    <span>
+        {{ $serviceprovider-> links()}}
+    </span>
 </div>
 @endsection
 

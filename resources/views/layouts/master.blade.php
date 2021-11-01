@@ -21,6 +21,18 @@
 
   <link rel="stylesheet" href="{{ asset('assets/css/dataTables.min.css') }}" >
 
+  <!--  Add bootstrap icon Library  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+      .checked {
+          color : yellow;
+          font-size : 20px;
+      }
+      .unchecked {
+          font-size : 20px;
+      }
+  </style>
+
 </head>
 
 <body class="">

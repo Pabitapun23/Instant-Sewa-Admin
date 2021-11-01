@@ -13,7 +13,15 @@ class ReviewManagementController extends Controller
             $serviceprovider->review = ReviewManagementController::review($serviceprovider->id)[0]->reviews;
             $serviceprovider->rating = ReviewManagementController::rating($serviceprovider->id);
     });
-       // return view('admin.reviewmanagement');
+        //$review = ReviewManagementController::review(3)[0]->reviews;
+        return view('admin.reviewmanagement')->with('serviceprovider', $serviceproviders);
+        //return $serviceproviders;
+    }
+
+    public function serviceReviewManage($id) {
+        $serviceprovider =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get();
+       // return view('admin.reviewmanagement')->with('serviceprovider', $serviceprovider);
+       return $serviceprovider;
     }
 
     public static function rating($id)
