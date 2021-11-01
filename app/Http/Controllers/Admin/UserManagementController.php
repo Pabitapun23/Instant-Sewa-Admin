@@ -17,11 +17,29 @@ class UserManagementController extends Controller
         $serviceprovider->occupation =UserManagementController::categoryName($serviceprovider->id);
         $serviceprovider->rating =UserManagementController::rating($serviceprovider->id);
 });
+        $serviceuser->map(function ($serviceusers) {
+        $serviceusers->popularServices =UserManagementController::TopServices($serviceusers->id);
+        });
        return view('admin.dashboard')
         ->with('serviceuser',$serviceuser)
         ->with('serviceprovider',$serviceproviders);
      // return $serviceproviders;
     }
+
+    public static function TopServices($id)
+    {
+    $operationId = DB::table('operations')->where('service_user_id', $id)->get()->pluck('cart_collection_id');
+    $count =  DB::table('carts')
+     ->select('service_id')
+     ->groupBy('service_id')
+     ->orderByRaw('COUNT(*) DESC')
+     ->whereIn('cart_collection_id',$operationId)
+     ->limit(1)
+     ->get();
+     $serviceName = DB::table('services')->where('id', $count[0]->service_id)->get()->pluck('name');
+    return $serviceName[0];
+    }
+    
     public static function rating($id)
     {
         $rating =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get()->pluck('rating');

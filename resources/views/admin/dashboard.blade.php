@@ -149,7 +149,7 @@
                     <?php echo $key->address_address ?>
                   </td>
                   <td>
-                    Fan repair
+                    <?php echo $key->popularServices ?>
                   </td>
                   <td>
                      <form action="{{ url('dashboard-block')}}" method="POST">
