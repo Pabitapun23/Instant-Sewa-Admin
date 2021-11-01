@@ -42,7 +42,17 @@
               <i class="material-icons">local_offer</i> <p><?php echo $key-> review?></p>
             </div>
           </div>
-          <a href="#" class="btn btn-primary" style="width: 100px; margin-left:120px; margin-bottom: 15px;">Block</a>
+          <a href="{{ url('/review-management/block/'.$key->id) }}" style="width: 100px; margin-left:120px; margin-bottom: 15px;" class="<?php if ($key->block_status == false) {
+                      echo"btn btn-danger";
+                    }
+                    else{
+                     echo "btn btn-success"; 
+                    }  ?>"><?php if ($key->block_status == false) {
+                      echo"Block";
+                    }
+                    else{
+                     echo "UnBlock"; 
+                    }  ?></a>
         </div>
       </div>
        <?php } ?>

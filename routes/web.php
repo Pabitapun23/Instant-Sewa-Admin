@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::get('/transactionManagement-search', 'App\Http\Controllers\Admin\TransactionManagementController@search')->name('transactionManagement-search');
 
     Route::get('/review-management', 'App\Http\Controllers\Admin\ReviewManagementController@reviewManage');
+    Route::get('/review-management/block/{id}', 'App\Http\Controllers\Admin\ReviewManagementController@blockUser');
     Route::get('/review-management/{id}', 'App\Http\Controllers\Admin\ReviewManagementController@serviceReviewManage');
 
 });

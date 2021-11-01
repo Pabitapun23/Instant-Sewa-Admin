@@ -17,6 +17,28 @@ class ReviewManagementController extends Controller
         return view('admin.reviewmanagement')->with('serviceprovider', $serviceproviders);
         //return $serviceproviders;
     }
+     public function blockUser($id)
+    {
+        $block_status = DB::table('users')->where('id', $id)->get()->pluck('block_status');
+        if($block_status[0] == 1)
+        {
+         DB::table('users')->where('id', $id)->update(['block_status'=>0]);
+           return redirect('/review-management')->with('status', 'Data Updated');
+        }
+        else{
+            DB::table('users')->where('id', $id)->update(['block_status'=>1]);
+            $blockamount = $block_status = DB::table('users')->where('id', $id)->get()->pluck('block_amount');
+        //     if($blockamount[0] == 4){
+        //         $users = User::findOrFail($request->input('id'));
+        // $users->delete();
+        //     }
+         //       else{
+            $totalblockamount = $blockamount[0]+1;
+            DB::table('users')->where('id', $id)->update(['block_amount'=>$totalblockamount]);
+     //   }
+        return redirect('/review-management')->with('status', 'Data Updated');
+    }
+    }
 
     public function serviceReviewManage($id) {
         $serviceprovider =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get();
