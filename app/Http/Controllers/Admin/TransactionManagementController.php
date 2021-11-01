@@ -39,10 +39,21 @@ class TransactionManagementController extends Controller
     }
 
     public function search(Request $request) {
-        if($request->ajax()) {
-            $output = '';
-            $query = $request->get('query');
-            return $query;
-        }
+      //   if($request->ajax()) {
+      //       $output = '';
+      //       $query = $request->get('query');
+      //       if($query != '')
+      // {
+      //   $payment = DB::table('payments')->where('payment_id','LIKE','%'.$query.'%')->orWhere('payer_email','LIKE','%'.$query.'%')->orWhere('amount','LIKE','%'.$query.'%')->orWhere('currency','LIKE','%'.$query.'%')->orWhere('platform','LIKE','%'.$q.'%')->orWhere('payment_status','LIKE','%'.$q.'%')->get()->pluck('id');
+      //   $payments  = DB::table('payments')->whereIn('id',$payment)->paginate(10);
+      //   $payments->map(function ($payment) {
+      //   $payment->cartname = TransactionManagementController::cartName($payment->cart_id);
+      //   $payment->payer_name = TransactionManagementController::serviceuserName($payment->cart_id);
+      //   $payment->payee_name = TransactionManagementController::serviceproviderName($payment->cart_id);
+      //  });
+      //  return view('admin.transactionmanagement')->with('payment',$payments);
+
+      // }
+      //   }
     }
 }

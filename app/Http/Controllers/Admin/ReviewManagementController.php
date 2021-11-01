@@ -10,12 +10,10 @@ class ReviewManagementController extends Controller
     public function reviewManage() {
         $serviceproviders  = DB::table('users')->where('user_type', 'ServiceProvider')->paginate(6);
         $serviceproviders->map(function ($serviceprovider) {
-            $serviceprovider->review = ReviewManagementController::review($serviceprovider->id);
+            $serviceprovider->review = ReviewManagementController::review($serviceprovider->id)[0]->reviews;
             $serviceprovider->rating = ReviewManagementController::rating($serviceprovider->id);
     });
        // return view('admin.reviewmanagement');
-       $review = ReviewManagementController::review(3);
-       return $review;
     }
 
     public static function rating($id)
