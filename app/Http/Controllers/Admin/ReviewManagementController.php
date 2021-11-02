@@ -45,8 +45,8 @@ class ReviewManagementController extends Controller
         $serviceproviders->map(function ($serviceprovider) {
             $serviceprovider->serviceUserName = ReviewManagementController::serviceUserName($serviceprovider->service_user_id);
     });
-       // return view('admin.reviewmanagement')->with('serviceprovider', $serviceprovider);
-       return $serviceproviders;
+        return view('admin.reviewcard')->with('serviceprovider', $serviceproviders);
+       //return $serviceproviders;
     }
 
     public static function rating($id)

@@ -11,12 +11,12 @@
       <div class="card">
         <div class="card-header card-header-primary">
           <h4 class="card-title ">Recharge Management
-              <div class="card-category float-right">
+              {{-- <div class="card-category float-right">
                 <input type="text" value="" class="search" placeholder="Search...">
                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
                   <i class="material-icons">search</i>
                 </button>
-              </div>
+              </div> --}}
            </h4>
            <p class="card-category">Here all the recharges are managed</p>
         </div>

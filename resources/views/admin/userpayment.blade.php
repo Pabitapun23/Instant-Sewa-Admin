@@ -53,12 +53,12 @@
       <div class="card">
         <div class="card-header card-header-primary">
           <h4 class="card-title ">User Payment Management
-            <div class="card-title float-right">
+            {{-- <div class="card-title float-right">
                 <input type="text" value="" class="search" placeholder="Search...">
                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
                   <i class="material-icons">search</i>
                 </button>
-            </div>
+            </div> --}}
         </h4>
         </div>
         <div class="card-body">
