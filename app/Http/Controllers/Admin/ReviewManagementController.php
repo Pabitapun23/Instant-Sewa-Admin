@@ -41,9 +41,12 @@ class ReviewManagementController extends Controller
     }
 
     public function serviceReviewManage($id) {
-        $serviceprovider =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get();
+        $serviceproviders =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get();
+        $serviceproviders->map(function ($serviceprovider) {
+            $serviceprovider->serviceUserName = ReviewManagementController::serviceUserName($serviceprovider->service_user_id);
+    });
        // return view('admin.reviewmanagement')->with('serviceprovider', $serviceprovider);
-       return $serviceprovider;
+       return $serviceproviders;
     }
 
     public static function rating($id)
@@ -74,6 +77,11 @@ class ReviewManagementController extends Controller
             ->limit(1)
             ->get();
         return $review;
+    }
+        public static function serviceUserName($id)
+    {
+         $name =  DB::table('users')->where('id', $id)->get()->pluck('username');
+        return $name[0];
     }
 }
 
