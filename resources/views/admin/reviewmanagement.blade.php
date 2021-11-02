@@ -7,14 +7,13 @@
 @section('content')
 <div class="container-fluid ">
     <div class="row">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12" style="margin-top: -10px;">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
               <h4 class="card-title">Rating and Review Management</h4>
             </div>
             <div class="card-body table-responsive">
                 <div class="card-content">
-                    {{-- <canvas id="myChart"></canvas> --}}
                 </div>
             </div>
           </div>
@@ -23,7 +22,7 @@
     <div class="row">
         <?php foreach ($serviceprovider as $key) { ?>
       <a href="{{ url('/review-management/'.$key->id) }}">
-      <div class="col-lg-4 col-md-4">
+      <div class="col-lg-4 col-md-4" style="margin-top: -45px;">
         <div class="card card-stats">
           <div class="card-header card-header-warning card-header-icon">
             <p class="card-title" style="margin-top: 10px;"><?php echo $key-> fullname?> (<?php echo $key->username ?>)</p>
