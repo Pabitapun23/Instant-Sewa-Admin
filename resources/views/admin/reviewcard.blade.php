@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.nosidebar')
 
 @section('title')
     Rating and Review Management | Instant Sewa
@@ -35,6 +35,7 @@
       </div>
     <?php } ?>
     </div>
+    <a href="{{ url('review-management/')}}" class="btn btn-secondary" style="width: 100px; height:40px;">BACK</a>
 </div>
 @endsection
 

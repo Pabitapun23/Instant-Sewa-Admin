@@ -41,7 +41,7 @@ class ReviewManagementController extends Controller
     }
 
     public function serviceReviewManage($id) {
-        $serviceproviders =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->get();
+        $serviceproviders =  DB::table('rate_and_reviews')->where('service_provider_id', $id)->paginate(6);
         $serviceproviders->map(function ($serviceprovider) {
             $serviceprovider->serviceUserName = ReviewManagementController::serviceUserName($serviceprovider->service_user_id);
     });

@@ -46,12 +46,12 @@
                       echo"btn btn-danger";
                     }
                     else{
-                     echo "btn btn-success"; 
+                     echo "btn btn-success";
                     }  ?>"><?php if ($key->block_status == false) {
                       echo"Block";
                     }
                     else{
-                     echo "UnBlock"; 
+                     echo "UnBlock";
                     }  ?></a>
         </div>
       </div>
