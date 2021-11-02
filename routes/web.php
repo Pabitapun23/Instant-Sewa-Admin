@@ -14,9 +14,14 @@ use App\Http\Controllers\Admin\ServiceManagementController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+    if(Auth::user()==null){
     return view('auth.login');
+}
+else
+{
+return redirect('/main-dashboard');
+}
 });
 
 Auth::routes();
@@ -35,7 +40,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
     Route::put('/service-management-update/{id}', 'App\Http\Controllers\Admin\ServiceManagementController@update');
     Route::delete('service-management-delete/{id}', 'App\Http\Controllers\Admin\ServiceManagementController@delete');
 
-    Route::get('/main-dashboard', 'App\Http\Controllers\Admin\MainDashboardController@mainDashboard');
+    Route::get('/main-dashboard', 'App\Http\Controllers\Admin\MainDashboardController@mainDashboard')->name('main-dashboard');
     Route::get('/user-payment-management', 'App\Http\Controllers\Admin\UserPaymentController@userPaymentData');
     Route::get('/user-feedback', 'App\Http\Controllers\Admin\UserFeedbackController@userData');
     Route::delete('/user-feedback-delete/{id}', 'App\Http\Controllers\Admin\UserFeedbackController@delete');
