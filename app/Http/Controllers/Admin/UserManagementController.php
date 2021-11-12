@@ -62,7 +62,7 @@ class UserManagementController extends Controller
     {
          $subcategories_id = DB::table('sub_category_service_providers')->where('service_provider_id', $id)->get()->pluck('subcategories_id');
         $categories_id = DB::table('sub_categories')->whereIn('id', $subcategories_id)->get()->pluck('category_id');
-        $categories_name=DB::table('categories')->whereIn('id', $subcategories_id)->get()->pluck('name');
+        $categories_name=DB::table('categories')->whereIn('id', $categories_id)->get()->pluck('name');
         $count = count($categories_name);
         $occupation="";
         for ($i=0; $i <$count ; $i++) {

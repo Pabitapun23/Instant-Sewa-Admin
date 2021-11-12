@@ -4,18 +4,17 @@
     Service Management | Instant Sewa
 @endsection
 
-
-@section('scripts')
 <script type="text/javascript">
     function pay_button(userid) {
           $('#exampleModal').on('click', function(e) {
              var link = $(e.target),
               modal = $(this);
+              console.log("hello");
               modal.find('#userId').val(userid);
       });
     }
   </script>
-@endsection
+
 
 @section('content')
 

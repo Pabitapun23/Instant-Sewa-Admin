@@ -24,8 +24,14 @@ class UserPaymentController extends Controller
     public static function userPay(Request $request)
     {
          $payment =  DB::table('transactions')->where('service_provider_id', $request->input('id'))->get()->pluck('payment');
+         if($payment[0]>$request->input('amount')){
          $new_payment = $payment[0]-$request->input('amount');
          DB::table('transactions')->where('service_provider_id', $request->input('id'))->update(['payment'=>$new_payment]);
           return redirect('/user-payment-management')->with('status', 'Data Updated');
+      }
+      else{
+         return redirect('/user-payment-management')->with('status', 'Data is invalid');
+      }
+
     }
 }
